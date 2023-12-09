@@ -124,9 +124,8 @@ class Shape(list[Point, ...]):  # child class of list class --> Shape is a list 
         self.points = [point if isinstance(point, Point) else Point(*point) for point in points]
         # self.points = Point(x, y) for x, y in points  # --> TypeError cannot unpack non-iterable Point object
 
-# i don't get why this method doesn't work
-    # def __repr__(self):
-        # return f"({super().__str__()})"  # self.points
+    def __repr__(self):
+        return f"({super().__repr__()})"  # self.points
 
     def __str__(self):
         return f"({super().__str__()})"
